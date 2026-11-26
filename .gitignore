@@ -1,0 +1,17 @@
+# 本仓库只存源码，不存运行时产物
+*.log
+__pycache__/
+*.pyc
+*.jkr
+calib.json
+best.json
+
+# 游戏本体解包 / 下载缓存（体积大，不入库）
+love/
+src/
+dl/
+smods-src/
+balatrobot-src/
+
+# macOS
+.DS_Store
