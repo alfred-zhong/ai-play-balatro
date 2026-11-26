@@ -42,6 +42,7 @@ AI 看到这些，自己决定出哪手、要不要先弃牌。
 tools/
   mech.py        机械工具箱：取状态、精确算分、执行动作。零策略
   restart.sh     可靠重启游戏（处理端口 TIME_WAIT 抢占）
+  extract-source.sh  按需解包游戏 Lua 源码（读计分逻辑用，不入库）
 mods/
   simulate.lua   自建端点：用游戏原生计分器穷举所有 5 张组合
   probe.lua      自建端点：调试用，返回 GAMESPEED/状态等内部值

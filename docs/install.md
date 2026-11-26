@@ -123,6 +123,26 @@ cd "$B" && BALATROBOT_FAST=0 BALATROBOT_GAMESPEED=4 BALATROBOT_AUDIO=0 ./run_lov
 
 `balatrobot` 自带的端点只能「操作」，不能「预算分数」。本仓库补了两个：
 
+### 4.0 想读游戏源码的话
+
+Balatro 的 Lua **没有加密**，全在 `Balatro.love`（一个 zip）里：
+
+```bash
+bash tools/extract-source.sh          # 解到 .game-source/
+bash tools/extract-source.sh /tmp/x   # 或指定目录
+```
+
+最关键的几个文件：
+
+| 文件 | 内容 |
+|---|---|
+| `functions/state_events.lua` | `evaluate_play` — 真正的计分循环 |
+| `functions/common_events.lua` | `eval_card` — 单张牌的效果分发 |
+| `functions/misc_functions.lua` | `evaluate_poker_hand`、`mod_chips`/`mod_mult` |
+| `card.lua` | `Card:get_chip_bonus`、`calculate_joker` |
+
+读这些是搞清楚「为什么我算的分和游戏不一样」的最快途径。
+
 ### 4.1 安装
 
 ```bash

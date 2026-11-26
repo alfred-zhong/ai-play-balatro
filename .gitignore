@@ -15,3 +15,6 @@ balatrobot-src/
 
 # macOS
 .DS_Store
+
+# 按需解包的游戏源码
+.game-source/
